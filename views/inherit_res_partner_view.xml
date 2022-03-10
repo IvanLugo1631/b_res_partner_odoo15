@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- <xpath expr="page[@name='pg']/group[@name='gp']/field" position="inside">
+                <field name="description"/>
+            </xpath> -->
+<!-- buscar en la raiz (//) -->
+<!-- buscar otros atributos para la etiqueta field -->
+<!-- Etiqueta -->
+            <xpath expr="//notebook" position='inside'>
+                <page name="internal_control" string="Internal Control">
+                    <group>
+                            <group>
+                                <field name="alias"/>
+                                <field name="type_of_contract"/>
+                                <field name="payment_method" /> 
+                                <field name="pay_frequency"/>
+                                <field name="agreement_tc"/>
+                                <field name="contract_signing_date"/> 
+                                <field name="physical" attrs="{'invisible':[('digital','=','True')]}"/>
+                                <field name="digital" attrs="{'invisible':[('physical','=','True')]}"/>
+                                <field name="validation"/>
+                                <field name="term"/>
+                                <field name="penalty"/>
+                                <field name="value_of_the_consideration"/>
+                                <field name="currency"/>
+                                <field name="nda"/>
+                                <field name="constitutive_act"/>
+                            
+                            </group>
+                           
+                            <group>
+                                <field name="id_representative"/>
+                                <field name="representative_power"/>
+                                <field name="supplier_score"/>
+                                <field name="review_69"/>
+                                <field name="opinion_on_compliance"/>
+                                <field name="date_annex_32D"/>
+                                <field name="csf"/>
+                                <field name="proof_of_address"/>
+                            </group>  
+                           
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- <record id="customer_suppliers_action" model="ir.actions.act_window">
+        <field name="name">Clientes y proveedores</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a Contact in your address book
+          </p><p>
+            Odoo helps you track all activities related to your contacts.
+          </p>
+        </field>
+    </record>
+
+     <menuitem
+        id="customer_suppliers_root"
+        name="Clientes y proveedores"
+        action='customer_suppliers_action'
+        sequence="25"/>
+ -->
+
+</odoo>
